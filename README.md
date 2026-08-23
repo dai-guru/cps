@@ -12,12 +12,23 @@ Die aktuelle Version steht unter **[Releases](../../releases)** als ZIP-Paket be
 | `cpss.exe` | Wie `cps.exe`, mit eigenem Konsolenfenster |
 | `libcurl.dll` | HTTP/IMAP/SMTP-Bibliothek (muss neben der EXE liegen) |
 | `CPS_Anleitung.md` | Benutzerhandbuch |
+| `cpsupdate.cps` | Selbst-Update-Skript (siehe unten) |
 
 **Installation:** ZIP in einen beliebigen Ordner entpacken — keine weitere Installation nötig.
 
 ```
 cps mein_skript.cps
 ```
+
+## Automatisches Update
+
+Das mitgelieferte Skript `cpsupdate.cps` prüft die hier veröffentlichte neueste Version und aktualisiert `cps.exe`, `cpss.exe` und `libcurl.dll` selbstständig (die neue Version gilt ab dem nächsten Start):
+
+```
+cps\cpss.exe cps\cpsupdate.cps
+```
+
+Der Aufruf eignet sich direkt als Menüpunkt „CPS aktualisieren" in der Anwendung (Annahme: CPS liegt im Unterordner `cps` des Anwendungsverzeichnisses — Pfade sonst anpassen). Mit dem Zusatzparameter `force` wird die aktuelle Version auch dann neu geladen, wenn sie bereits installiert ist (Reparatur).
 
 ## Dokumentation
 

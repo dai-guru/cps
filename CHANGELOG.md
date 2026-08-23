@@ -5,6 +5,7 @@ Alle für Anwender relevanten Änderungen an CPS.
 ## v07.07.26 — Stand 2026-08-23
 
 ### Neu
+- **Selbst-Update:** neues Skript `cpsupdate.cps` prüft die neueste Version auf GitHub und aktualisiert CPS automatisch — geeignet als Menüpunkt „CPS aktualisieren" in der Anwendung.
 - **MD5-Unterstützung:** neue Prozessoren `md5` und `md5file` in Skripten sowie die Kommandozeilenoptionen `-md5 <text>` und `-md5file <datei>` zum direkten Berechnen von MD5-Hashes.
 
 ### Verbessert
