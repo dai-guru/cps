@@ -13,6 +13,27 @@ Die Kommentare in den Skripten erklären jede Zeile — die Beispiele sind
 zugleich die Kurzdoku. Die vollständige Referenz steht in der
 [CPS_Anleitung.md](../CPS_Anleitung.md).
 
+## Haupt-Demo: UID-Prüfung über FinanzOnline
+
+**`beispiel_uid.cps`** ([Ausgabe](beispiel_uid.out.txt)) zeigt, wofür CPS
+gebaut ist — eine komplette Webservice-Anwendung in einem Skript:
+**Login** am FinanzOnline-SOAP-Service (Session-ID holen), **UID-Abfrage
+Stufe 2** (liefert bei gültiger UID Name und Adresse des Inhabers zurück),
+**Logout** — mit Fehlerbehandlung für jeden Schritt und Exit-Codes
+(0 = gültig, 1 = ungültig, 7 = nicht prüfbar, 9 = Login-Fehler), die ein
+aufrufendes Programm direkt auswerten kann. Alle drei Requests laufen im
+Speicher über die eingebaute libcurl — kein `curl.exe`-Aufruf, keine
+Temp-Dateien.
+
+Zum Ausführen wird ein eigener FinanzOnline-Webservice-Benutzer benötigt:
+[`beispiel_uid_zugang.muster`](beispiel_uid_zugang.muster) nach
+`beispiel_uid_zugang.cps` kopieren und ausfüllen (bleibt lokal, ist per
+`.gitignore` vom Repo ausgeschlossen). Die beigelegte Ausgabe stammt aus
+einem echten Lauf; UID, Name und Adresse des gültigen Treffers wurden
+durch Musterdaten ersetzt, der zweite Lauf (ungültige UID) ist unverändert.
+
+## Weitere Beispiele
+
 | Datei | Ergebnis | Zeigt |
 |---|---|---|
 | `beispiel_sprache.cps` | [Ausgabe](beispiel_sprache.out.txt) | Rundgang durch die Sprache: Variablen (drei Schreibweisen), Quotes, Prozessoren in der Referenz, `if`/`ifnot` mit `else`, Teilstring-Prüfung `in`, `goto`, Subroutinen mit `gosub`/`return`. Läuft offline. |

@@ -1,0 +1,17 @@
+--- UID-Pruefung: ATU12345678 ---
+Anmeldung bei FinanzOnline ...
+Session offen, frage UID ab ...
+
+ UID ATU12345678 ist gueltig
+Inhaber:  Muster Maschinen GmbH
+Adresse:  Musterweg 1
+          AT-1234 Musterdorf
+Abgemeldet.
+
+--- UID-Pruefung: ATU00000000 ---
+Anmeldung bei FinanzOnline ...
+Session offen, frage UID ab ...
+
+ UID ATU00000000 ist NICHT gueltig
+Code 4: Die UID-Nummer des Erwerbers ist falsch.
+Abgemeldet.

@@ -1,0 +1,14 @@
+# Zugangsdaten fuer beispiel_uid.cps (FinanzOnline-Webservice)
+#
+# Diese Datei nach  beispiel_uid_zugang.cps  kopieren und ausfuellen.
+# Die ausgefuellte Datei bleibt LOKAL - niemals committen oder
+# weitergeben! (Bei eigenem Repo: in .gitignore aufnehmen.)
+#
+# Der Webservice-Benutzer wird in FinanzOnline unter
+# Admin -> Benutzer Einzel als eigener Benutzer fuer Webservices
+# angelegt (nicht der normale Anmelde-Benutzer).
+
+fon_tid: 123456789
+fon_benid: webservice-benutzer
+fon_pin: geheim
+fon_uid: ATU12345678

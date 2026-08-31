@@ -1,6 +1,8 @@
-# CPS — Windows-Skript-Interpreter
+# CPS — Curl Program Script
 
-CPS führt `.cps`-Skripte aus: eine kompakte Skriptsprache für HTTP/REST-Aufrufe, JSON/XML-Extraktion, Datei- und Mailoperationen (IMAP/SMTP) — gedacht für die Anbindung von DataFlex-Altanwendungen an moderne Web-APIs.
+CPS steuert curl per Skript: Was sonst einzelne `curl.exe`-Aufrufe mit langen Parameterketten wären, wird ein lesbares `.cps`-Skript — Requests, Antwort-Auswertung, Fehlerbehandlung und Weiterverarbeitung in einem. Die libcurl ist dabei **direkt eingebunden** (`libcurl.dll`): alle Abfragen laufen im Speicher, ohne Prozessstart und ohne Temp-Dateien — schneller und sicherer als curl-Kommandozeilen.
+
+Die Skriptsprache bereitet die Ergebnisse gleich für die Weiterverarbeitung auf: JSON/XML-Extraktion in Variablen, formatierte Konsolenausgabe, Dateien und Exit-Codes für aufrufende Windows-Programme. Typischer Einsatz: bewährte Anwendungen (z.B. DataFlex) an Web-APIs anbinden — Token holen, abfragen, abmelden, alles in einem Skript. Dazu kommen Mailversand und -abruf (SMTP/IMAP, ebenfalls über libcurl) und Dateioperationen.
 
 ## Download
 
@@ -32,7 +34,7 @@ Der Aufruf eignet sich direkt als Menüpunkt „CPS aktualisieren" in der Anwend
 
 ## Beispiele
 
-Im Ordner **[beispiele/](beispiele/)** liegen lauffähige `.cps`-Beispielskripte mit beigelegten Ergebnissen: Sprach-Rundgang, Dateioperationen, JSON/XML-Extraktion, Prozessoren und ein HTTP-Request mit Fehler-Handler. Die Kommentare im Skript erklären jede Zeile.
+Im Ordner **[beispiele/](beispiele/)** liegen lauffähige `.cps`-Beispielskripte mit beigelegten Ergebnissen. Die **Haupt-Demo `beispiel_uid.cps`** ist eine echte Webservice-Anwendung in einem Skript: UID-Nummern-Prüfung über FinanzOnline — Login (Session-ID), SOAP-Abfrage mit Adress-Rückgabe, Logout, Exit-Codes für das aufrufende Programm. Dazu kommen Sprach-Rundgang, Dateioperationen, JSON/XML-Extraktion, Prozessoren und ein einfacher HTTP/JSON-Request. Die Kommentare im Skript erklären jede Zeile.
 
 ## Dokumentation
 
