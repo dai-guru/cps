@@ -1,0 +1,14 @@
+--- Variablen ---
+Kunde: Anna Muster, 12345 Musterstadt
+Zitat in Klammern: [  mit  Leerzeichen  ]
+Kleinbuchstaben:   anna muster
+Erste 4 Zeichen:   Anna
+Laenge:            11
+--- Bedingungen ---
+Stand 42 ist gross
+Antwort: richtig
+Der Name enthaelt "muster"
+--- Subroutine ---
+Hallo, Welt!
+Hallo, CPS!
+Fertig - beispiel_sprache.cps ohne Fehler durchlaufen.

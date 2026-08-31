@@ -1,0 +1,5 @@
+--- Ergebnis ---
+HTTP-Status: 200, Typ: JSON, Dauer: 225ms
+Neueste CPS-Version:  v07.07.26
+Erstes Release-Asset: cps-v07.07.26.zip
+Fertig - beispiel_http.cps durchlaufen.

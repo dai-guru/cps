@@ -1,0 +1,19 @@
+--- Strings ---
+lower:     cps-beispiel
+left:3     CPS
+right:8    Beispiel
+len:       12
+pad:16     [CPS-Beispiel    ]
+--- Encoding ---
+urlencode:  Preis%20%3E%20100%20EUR%20%26%20Rabatt%3F
+base64:     Q1BTLUJlaXNwaWVs
+base64url:  Q1BTLUJlaXNwaWVs
+hex:        4350532d426569737069656c
+--- Zahlen ---
+cent2eur:  123,45 EUR
+dec (2):   3.14
+dec:4      3.1416
+--- Hash und Verkettung ---
+sha256:           1781d3046802ce6585bf3dedb962019289bd9fffb7774e153faaf4514d9c4d8b
+sha256 + left:16: 1781d3046802ce65
+Fertig - beispiel_prozessoren.cps durchlaufen.

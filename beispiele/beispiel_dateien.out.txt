@@ -1,0 +1,6 @@
+beispiel_dateien_brief.txt geschrieben
+Aus Include geladen: Bernd Beispiel, Limit 500
+Der Brief hat 82 Zeichen
+Ersetzung geschrieben (Anna -> Bernd)
+Extrahierter Betrag: 149,90
+Fertig - beispiel_dateien.cps durchlaufen.

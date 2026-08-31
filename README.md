@@ -30,6 +30,10 @@ cps\cpss.exe cps\cpsupdate.cps
 
 Der Aufruf eignet sich direkt als Menüpunkt „CPS aktualisieren" in der Anwendung (Annahme: CPS liegt im Unterordner `cps` des Anwendungsverzeichnisses — Pfade sonst anpassen). Mit dem Zusatzparameter `force` wird die aktuelle Version auch dann neu geladen, wenn sie bereits installiert ist (Reparatur).
 
+## Beispiele
+
+Im Ordner **[beispiele/](beispiele/)** liegen lauffähige `.cps`-Beispielskripte mit beigelegten Ergebnissen: Sprach-Rundgang, Dateioperationen, JSON/XML-Extraktion, Prozessoren und ein HTTP-Request mit Fehler-Handler. Die Kommentare im Skript erklären jede Zeile.
+
 ## Dokumentation
 
 Das vollständige Benutzerhandbuch liegt hier im Repo: **[CPS_Anleitung.md](CPS_Anleitung.md)**

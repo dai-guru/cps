@@ -1,0 +1,9 @@
+--- JSON ---
+Kunde: Anna Muster, PLZ 12345
+Posten 1: 500 x Schrauben
+Offen (boolean als 1/0): 1
+--- XML ---
+Bestellung 4711 von Muster GmbH (Typ: firma): EUR 1234,56
+--- Muster ---
+LID: 98765, Versandart: express
+Fertig - beispiel_extraktion.cps durchlaufen.
