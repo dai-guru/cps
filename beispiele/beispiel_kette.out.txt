@@ -1,6 +1,8 @@
 --- Abfrage 1: Wo liegt "Wien"? ---
 Gefunden: Wien, Österreich
 Koordinaten: 48.20849 / 16.37208, Einwohner: 1691468
+Zeitzone: Europe/Vienna
 --- Abfrage 2: Wetter an diesen Koordinaten ---
- Wetter in Wien: 24.9 Grad, Wind 14.8 km/h, bedeckt 
+ Wetter in Wien: 25.5 Grad, Wind 16.2 km/h, bedeckt 
+Ortszeit dort: 2026-08-31, 12:45 Uhr
 Fertig - zwei verkettete Abfragen, Ergebnis aufbereitet.

@@ -16,9 +16,12 @@
 #          cps.exe beispiele\beispiel_kette.cps Budapest
 # ============================================================
 
-# --- Ort aus Parameter 1, sonst Standardwert ---
+# --- Ort aus Parameter 1 (+2 bei Namen wie "Los Angeles") ---
 %ort = Wien
 if %1 %ort = (%1)
+ifnot %2 :ort_fertig
+%ort = (%1) (%2)
+:ort_fertig
 
 > [cyan]--- Abfrage 1: Wo liegt "(%ort)"? ---[#0]
 
@@ -29,23 +32,30 @@ if %1 %ort = (%1)
 # Rueckmeldung einbinden: Koordinaten und Infos in Variablen
 !< %fundort=results[0].name %land=results[0].country
 !< %lat=results[0].latitude %lon=results[0].longitude
-!< %einwohner=results[0].population
+!< %einwohner=results[0].population %tz=results[0].timezone
 
 ifnot %lat :ort_unbekannt
 
 > Gefunden: (%fundort), (%land)
 > Koordinaten: (%lat) / (%lon), Einwohner: (%einwohner)
+> Zeitzone: (%tz)
 
 # ============================================================
 # Abfrage 2 wird mit dem ERGEBNIS von Abfrage 1 gefuettert:
-# (%lat) und (%lon) stehen direkt in der naechsten URL
+# (%lat), (%lon) und (%tz) stehen direkt in der naechsten URL.
+# Durch die Zeitzone liefert die Antwort auch die ORTSZEIT.
 # ============================================================
 > [cyan]--- Abfrage 2: Wetter an diesen Koordinaten ---[#0]
 
-!> https://api.open-meteo.com/v1/forecast?latitude=(%lat)&longitude=(%lon)&current_weather=true -t 15 -ehj :api_err
+!> https://api.open-meteo.com/v1/forecast?latitude=(%lat)&longitude=(%lon)&current_weather=true&timezone=(%tz url) -t 15 -ehj :api_err
 
 !< %temp=current_weather.temperature %wind=current_weather.windspeed
-!< %code=current_weather.weathercode
+!< %code=current_weather.weathercode %ortszeit=current_weather.time
+
+# ISO-Zeitstempel "2026-08-31T14:15" mit Prozessoren zerlegen:
+# left:10 = Datum, right:5 = Uhrzeit
+%datum = (%ortszeit left:10)
+%uhrzeit = (%ortszeit right:5)
 
 # --- Rueckmeldung aufbereiten: WMO-Wettercode -> Klartext ---
 %wetter = Wettercode (%code)
@@ -59,6 +69,7 @@ if %code = 71 %wetter = Schneefall
 if %code = 95 %wetter = Gewitter
 
 > [/darkblue white] Wetter in (%fundort): (%temp) Grad, Wind (%wind) km/h, (%wetter) [#0]
+> Ortszeit dort: (%datum), (%uhrzeit) Uhr
 > [green]Fertig - zwei verkettete Abfragen, Ergebnis aufbereitet.[#0]
 exit 0
 
